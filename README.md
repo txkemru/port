@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Port - Социальная платформа для портфолио
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19.0.0-blue?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![Prisma](https://img.shields.io/badge/Prisma-6.10.1-2D3748?style=for-the-badge&logo=prisma)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
 
+**Современная социальная платформа для создания и демонстрации портфолио с возможностью взаимодействия между пользователями**
+
+[🚀 Демо](#) • [📖 Документация](#) • [🐛 Сообщить об ошибке](#)
+
+</div>
+
+---
+
+## ✨ Особенности
+
+- 🎨 **Современный UI/UX** - Красивый интерфейс с использованием Tailwind CSS
+- 👥 **Социальные функции** - Лайки, комментарии, подписки, сохранение постов
+- 📱 **Адаптивный дизайн** - Отлично работает на всех устройствах
+- 🔐 **Безопасная аутентификация** - Защищенная система регистрации и входа
+- 🖼️ **Загрузка медиа** - Поддержка изображений и GIF-анимаций
+- 🔍 **Поиск пользователей** - Поиск по имени пользователя
+- 📊 **Профили пользователей** - Детальные профили с настройками
+- ⚡ **Быстрая производительность** - Оптимизировано с Next.js 15 и Turbopack
+
+## 🛠️ Технологический стек
+
+### Frontend
+- **Next.js 15** - React фреймворк с App Router
+- **React 19** - Библиотека для создания пользовательских интерфейсов
+- **TypeScript** - Типизированный JavaScript
+- **Tailwind CSS 4** - Utility-first CSS фреймворк
+- **React Icons** - Библиотека иконок
+
+### Backend & Database
+- **Prisma** - ORM для работы с базой данных
+- **SQLite** - Легковесная база данных
+- **bcryptjs** - Хеширование паролей
+- **multer** - Обработка загрузки файлов
+
+### Дополнительные библиотеки
+- **@dnd-kit** - Drag & Drop функциональность
+- **uuid** - Генерация уникальных идентификаторов
+
+## 🚀 Быстрый старт
+
+### Предварительные требования
+
+- Node.js 18+ 
+- npm или yarn
+- Git
+
+### Установка
+
+1. **Клонируйте репозиторий**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/txkemru/port.git
+cd port
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Установите зависимости**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Настройте базу данных**
+```bash
+npx prisma generate
+npx prisma db push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Создайте файл .env**
+```bash
+cp .env.example .env
+```
 
-## Learn More
+5. **Запустите сервер разработки**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Структура проекта
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── api/               # API маршруты
+│   ├── home/              # Главная страница
+│   ├── login/             # Страница входа
+│   ├── register/          # Страница регистрации
+│   ├── profile/           # Профили пользователей
+│   └── portfolio/         # Портфолио
+├── components/            # React компоненты
+├── context/              # React Context
+├── lib/                  # Утилиты и конфигурация
+└── pages/                # Страницы приложения
 
-## Deploy on Vercel
+prisma/
+├── schema.prisma         # Схема базы данных
+└── migrations/           # Миграции БД
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🗄️ Модели данных
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Основные сущности:
+- **User** - Пользователи системы
+- **Profile** - Профили пользователей
+- **Post** - Посты/публикации
+- **File** - Загруженные файлы
+- **Like** - Лайки постов
+- **Comment** - Комментарии
+- **Follow** - Подписки между пользователями
+- **Save** - Сохраненные посты
+
+## 🔧 API Endpoints
+
+### Аутентификация
+- `POST /api/login` - Вход в систему
+- `POST /api/user-create` - Регистрация пользователя
+
+### Пользователи
+- `GET /api/user` - Получить текущего пользователя
+- `GET /api/profile` - Получить профиль
+- `GET /api/user-profile/:username` - Профиль по username
+- `POST /api/check-username` - Проверить доступность username
+
+### Контент
+- `GET /api/feed` - Лента постов
+- `POST /api/post` - Создать пост
+- `GET /api/publications` - Публикации пользователя
+- `GET /api/search` - Поиск пользователей
+
+### Взаимодействие
+- `POST /api/like` - Лайк/анлайк поста
+- `POST /api/comment` - Добавить комментарий
+- `POST /api/follow` - Подписаться/отписаться
+- `POST /api/save` - Сохранить/удалить из сохраненных
+
+## 🎨 Скриншоты
+
+<div align="center">
+  <img src="screenshots/home.png" alt="Главная страница" width="400"/>
+  <img src="screenshots/profile.png" alt="Профиль пользователя" width="400"/>
+  <img src="screenshots/feed.png" alt="Лента постов" width="400"/>
+</div>
+
+## 🤝 Вклад в проект
+
+Мы приветствуем вклад в развитие проекта! 
+
+1. Форкните репозиторий
+2. Создайте ветку для новой функции (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'Add amazing feature'`)
+4. Отправьте в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
+
+## 📝 Лицензия
+
+Этот проект лицензирован под MIT License - см. файл [LICENSE](LICENSE) для деталей.
+
+## 👨‍💻 Автор
+
+**txkemru** - [GitHub](https://github.com/txkemru)
+
+---
+
+<div align="center">
+
+⭐ **Если проект вам понравился, поставьте звездочку!** ⭐
+
+</div>
