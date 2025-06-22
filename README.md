@@ -164,9 +164,9 @@ prisma/
 
 Этот проект лицензирован под MIT License - см. файл [LICENSE](LICENSE) для деталей.
 
-## 👨‍💻 Автор
+## 👨‍💻 Разработчик
 
-**txkemru** - [GitHub](https://github.com/txkemru)
+**Владимир Пушков** - [GitHub](https://github.com/txkemru) • [Telegram](https://t.me/txkem)
 
 ---
 
